@@ -36,6 +36,7 @@ pipeline {
             steps {
                sh 'java --version'
             }
+         }
       }
       failure
       {
