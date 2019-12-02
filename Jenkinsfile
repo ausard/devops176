@@ -1,7 +1,9 @@
 #!groovy
+import sun.nio.fs.GnomeFileTypeDetector
+
 pipeline {
    agent{
-      dockerfile true
+      label("master")
    }
    options{
       timestamps()
@@ -27,7 +29,13 @@ pipeline {
    }
    post {
       success{
-         echo currentBuild.result
+         stage('docker') {
+            agent {
+               dockerfile true
+            }
+            steps {
+               sh 'java --version'
+            }
       }
       failure
       {
