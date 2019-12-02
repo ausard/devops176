@@ -11,7 +11,7 @@ public class BasicHttpServerExample2 {
 
         public static void main(String[] args) throws IOException {
             HttpServer server = HttpServer.create(new InetSocketAddress(8500), 0);
-            HttpContext context = server.createContext("/telegram");
+            HttpContext context = server.createContext("/");
             context.setHandler(BasicHttpServerExample2::handleRequest);
             server.start();
         }
@@ -33,9 +33,9 @@ public class BasicHttpServerExample2 {
          String apiToken = "1034598929:AAG0fBfLyxdF45rnY0bV92Uv28_dFhpV2ow";
          String chatId = "@Devops176";
          System.out.println(exchange.getRequestURI().toString());
-         String[] query =exchange.getRequestURI().getQuery().split("&");
+         String query =exchange.getRequestURI().getQuery();
 
-         urlString = String.format(urlString, apiToken, chatId, Arrays.toString(query));
+         urlString = String.format(urlString, apiToken, chatId, query);
 
          URL url = new URL(urlString);
          URLConnection conn = url.openConnection();
