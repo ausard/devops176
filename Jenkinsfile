@@ -26,18 +26,16 @@ pipeline {
             // exit 1
          }
       }
-   }
-   post {
-      success{
-         stage('docker') {
-            agent {
-               dockerfile true
-            }
-            steps {
-               sh 'java --version'
-            }
+      stage('docker') {
+         agent {
+            dockerfile true
+         }
+         steps {
+            sh 'java --version'
          }
       }
+   }
+   post {
       failure
       {
          echo currentBuild.result
