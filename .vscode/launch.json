@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SimpleHttpServer",
+            "request": "launch",
+            "mainClass": "devops.lab.alsab.SimpleHttpServer",
+            "projectName": "httpSrv"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BasicHttpServerExample2",
+            "request": "launch",
+            "mainClass": "devops.lab.alsab.BasicHttpServerExample2",
+            "projectName": "httpSrv"
+        }
+    ]
+}

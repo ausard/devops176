@@ -4,7 +4,6 @@ import com.sun.net.httpserver.*;
 
 import java.io.*;
 import java.net.*;
-import java.util.Arrays;
 
 
 public class BasicHttpServerExample2 {
@@ -32,15 +31,15 @@ public class BasicHttpServerExample2 {
 
          String apiToken = "1034598929:AAG0fBfLyxdF45rnY0bV92Uv28_dFhpV2ow";
          String chatId = "@Devops176";
-         System.out.println(exchange.getRequestURI().toString());
-         String query =exchange.getRequestURI().getQuery();
+         System.out.println(exchange.getRequestURI());
+         String query =exchange.getRequestURI().toString();
 
          urlString = String.format(urlString, apiToken, chatId, query);
 
          URL url = new URL(urlString);
          URLConnection conn = url.openConnection();
 
-         conn.getInputStream();
+         //conn.getInputStream();
 
 
      }
